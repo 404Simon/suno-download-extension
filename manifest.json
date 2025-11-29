@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Suno Song Downloader",
+  "version": "1.0.0",
+  "description": "Download songs from Suno.com with a single click",
+  "icons": {
+    "48": "icon.png",
+    "96": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "downloads"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://suno.com/song/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
